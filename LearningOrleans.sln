@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrainInterfaces", "GrainInterfaces\GrainInterfaces.csproj", "{FF7C3C5E-FF68-433C-86F6-FA7B63ED42AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grains", "Grains\Grains.csproj", "{BD5769AA-297F-4D0D-8DFE-69552744578A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silo", "Silo\Silo.csproj", "{C8F93A10-3A14-45B0-A16F-DC146D77DBE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{31A81B17-AB40-447D-AEA6-FF5F77891910}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF7C3C5E-FF68-433C-86F6-FA7B63ED42AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF7C3C5E-FF68-433C-86F6-FA7B63ED42AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF7C3C5E-FF68-433C-86F6-FA7B63ED42AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF7C3C5E-FF68-433C-86F6-FA7B63ED42AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD5769AA-297F-4D0D-8DFE-69552744578A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD5769AA-297F-4D0D-8DFE-69552744578A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD5769AA-297F-4D0D-8DFE-69552744578A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD5769AA-297F-4D0D-8DFE-69552744578A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8F93A10-3A14-45B0-A16F-DC146D77DBE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8F93A10-3A14-45B0-A16F-DC146D77DBE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8F93A10-3A14-45B0-A16F-DC146D77DBE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8F93A10-3A14-45B0-A16F-DC146D77DBE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31A81B17-AB40-447D-AEA6-FF5F77891910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31A81B17-AB40-447D-AEA6-FF5F77891910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31A81B17-AB40-447D-AEA6-FF5F77891910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31A81B17-AB40-447D-AEA6-FF5F77891910}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
