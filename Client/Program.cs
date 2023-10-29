@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
 using GrainInterfaces;
 
 var hostBuilder = new HostBuilder()
@@ -8,7 +8,11 @@ var hostBuilder = new HostBuilder()
     {
         clientBuilder.UseLocalhostClustering();
     })
-    .ConfigureLogging(logging => logging.AddConsole())
+    .ConfigureLogging(logging =>
+    {
+        logging.AddConsole();
+        logging.SetMinimumLevel(LogLevel.Information);
+    })
     .UseConsoleLifetime();
 
 using var host = hostBuilder.Build();

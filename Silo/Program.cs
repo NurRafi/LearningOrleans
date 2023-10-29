@@ -6,7 +6,11 @@ var hostBuilder = new HostBuilder()
     {
         siloBuilder
             .UseLocalhostClustering()
-            .ConfigureLogging(logging => logging.AddConsole());
+            .ConfigureLogging(logging =>
+            {
+                logging.AddConsole();
+                logging.SetMinimumLevel(LogLevel.Information);
+            });
     })
     .UseConsoleLifetime();
 
