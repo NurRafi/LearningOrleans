@@ -1,10 +1,14 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-var hostBuilder = new HostBuilder()
+using var host = new HostBuilder()
     .UseOrleans(siloBuilder =>
     {
         siloBuilder
+            .AddAdoNetGrainStorage("robotStateStore", options =>
+            {
+                options.ConnectionString = "Server=localhost;Database=LearningOrleans;User ID=batman;Password=1sAGrumpyFella;Trusted_Connection=False;Encrypt=False;MultipleActiveResultSets=True;";
+            })
             .UseLocalhostClustering()
             .ConfigureLogging(logging =>
             {
@@ -12,7 +16,7 @@ var hostBuilder = new HostBuilder()
                 logging.SetMinimumLevel(LogLevel.Information);
             });
     })
-    .UseConsoleLifetime();
+    .UseConsoleLifetime()
+    .Build();
 
-using var host = hostBuilder.Build();
 await host.RunAsync();

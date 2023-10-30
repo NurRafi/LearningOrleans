@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using GrainInterfaces;
 
-var hostBuilder = new HostBuilder()
+using var host = new HostBuilder()
     .UseOrleansClient(clientBuilder =>
     {
         clientBuilder.UseLocalhostClustering();
@@ -13,19 +13,20 @@ var hostBuilder = new HostBuilder()
         logging.AddConsole();
         logging.SetMinimumLevel(LogLevel.Information);
     })
-    .UseConsoleLifetime();
+    .UseConsoleLifetime()
+    .Build();
 
-using var host = hostBuilder.Build();
 await host.StartAsync();
 
 var client = host.Services.GetRequiredService<IClusterClient>();
 
 var robot = client.GetGrain<IRobot>("Nur");
 
-await robot.AddInstruction("Go Left");
-await robot.AddInstruction("Go Right");
+await robot.AddInstruction("Go left");
+await robot.AddInstruction("Go right");
 Console.WriteLine(await robot.GetInstructionCount());
 Console.WriteLine(await robot.GetNextInstruction());
 Console.WriteLine(await robot.GetInstructionCount());
+await robot.AddInstruction("Pick item");
 
 await host.StopAsync();

@@ -1,31 +1,40 @@
-﻿using GrainInterfaces;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
+using Orleans.Runtime;
+using GrainInterfaces;
 
 namespace Grains;
 
-public sealed class Robot(ILogger<Robot> logger) : Grain, IRobot
+[GenerateSerializer]
+public class RobotState
 {
-    private readonly Queue<string> _instructions = new();
+    [Id(0)]
+    public Queue<string> Instructions { get; } = new();
+}
 
-    public Task AddInstruction(string instruction)
+public sealed class Robot(
+    ILogger<Robot> logger,
+    [PersistentState("robotState", "robotStateStore")] IPersistentState<RobotState> state) : Grain, IRobot
+{
+    public async Task AddInstruction(string instruction)
     {
-        _instructions.Enqueue(instruction);
+        state.State.Instructions.Enqueue(instruction);
+        await state.WriteStateAsync();
 
         logger.LogInformation($"{this.GetPrimaryKeyString()} <= {instruction}");
-
-        return Task.CompletedTask;
     }
 
-    public Task<string> GetNextInstruction()
+    public async Task<string?> GetNextInstruction()
     {
-        var instruction = _instructions.Dequeue();
+        if (state.State.Instructions.Count == 0) return null;
+
+        var instruction = state.State.Instructions.Dequeue();
+        await state.WriteStateAsync();
 
         logger.LogInformation($"{this.GetPrimaryKeyString()} => {instruction}");
 
-        // Wish there was Option
-        return _instructions.Count == 0 ? Task.FromResult<string>(null) : Task.FromResult(instruction);
+        return instruction;
     }
 
     public Task<int> GetInstructionCount() =>
-        Task.FromResult(_instructions.Count);
+        Task.FromResult(state.State.Instructions.Count);
 }
