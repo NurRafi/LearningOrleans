@@ -20,13 +20,15 @@ await host.StartAsync();
 
 var client = host.Services.GetRequiredService<IClusterClient>();
 
-var robot = client.GetGrain<IRobot>("Nur");
+while (true)
+{
+    Console.WriteLine("Robot name: ");
+    var grain = client.GetGrain<IRobotGrain>(Console.ReadLine());
 
-await robot.AddInstruction("Go left");
-await robot.AddInstruction("Go right");
-Console.WriteLine(await robot.GetInstructionCount());
-Console.WriteLine(await robot.GetNextInstruction());
-Console.WriteLine(await robot.GetInstructionCount());
-await robot.AddInstruction("Pick item");
+    Console.WriteLine("Instruction: ");
+    await grain.AddInstruction(Console.ReadLine());
 
-await host.StopAsync();
+    Console.WriteLine($"{grain.GetGrainId()} has {await grain.GetInstructionCount()} instructions.");
+}
+
+// await host.StopAsync();

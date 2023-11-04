@@ -14,7 +14,8 @@ using var host = new HostBuilder()
             {
                 logging.AddConsole();
                 logging.SetMinimumLevel(LogLevel.Information);
-            });
+            })
+            .UseDashboard();
     })
     .UseConsoleLifetime()
     .Build();

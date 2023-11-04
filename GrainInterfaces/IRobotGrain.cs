@@ -1,6 +1,6 @@
 ﻿namespace GrainInterfaces;
 
-public interface IRobot : IGrainWithStringKey
+public interface IRobotGrain : IGrainWithStringKey
 {
     Task AddInstruction(string instruction);
     Task<string?> GetNextInstruction();
