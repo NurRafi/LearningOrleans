@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using GrainInterfaces;
+using Microsoft.Extensions.Logging;
 using Orleans.Runtime;
-using GrainInterfaces;
 
 namespace Grains;
 

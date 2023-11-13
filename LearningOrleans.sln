@@ -4,9 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrainInterfaces", "GrainInt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grains", "Grains\Grains.csproj", "{BD5769AA-297F-4D0D-8DFE-69552744578A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silo", "Silo\Silo.csproj", "{C8F93A10-3A14-45B0-A16F-DC146D77DBE2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{31A81B17-AB40-447D-AEA6-FF5F77891910}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{FC80EC94-655F-4606-85EC-C82D326FAC25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,13 +20,9 @@ Global
 		{BD5769AA-297F-4D0D-8DFE-69552744578A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD5769AA-297F-4D0D-8DFE-69552744578A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD5769AA-297F-4D0D-8DFE-69552744578A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C8F93A10-3A14-45B0-A16F-DC146D77DBE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C8F93A10-3A14-45B0-A16F-DC146D77DBE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C8F93A10-3A14-45B0-A16F-DC146D77DBE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C8F93A10-3A14-45B0-A16F-DC146D77DBE2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{31A81B17-AB40-447D-AEA6-FF5F77891910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31A81B17-AB40-447D-AEA6-FF5F77891910}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31A81B17-AB40-447D-AEA6-FF5F77891910}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31A81B17-AB40-447D-AEA6-FF5F77891910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC80EC94-655F-4606-85EC-C82D326FAC25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC80EC94-655F-4606-85EC-C82D326FAC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC80EC94-655F-4606-85EC-C82D326FAC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC80EC94-655F-4606-85EC-C82D326FAC25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
