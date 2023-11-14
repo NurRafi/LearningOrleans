@@ -2,24 +2,31 @@ using GrainInterfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Move to a Silos project?
-builder.Host
-    .UseOrleans(siloBuilder =>
-    {
-        siloBuilder
-            .AddAdoNetGrainStorage("RobotStore", options =>
-            {
-                options.ConnectionString = "Server=localhost;Database=LearningOrleans;User ID=NurRafi;Password=NurRafi;Trusted_Connection=False;Encrypt=False;MultipleActiveResultSets=True;";
-            })
-            .UseLocalhostClustering()
-            .ConfigureLogging(logging =>
-            {
-                logging.AddConsole();
-                logging.SetMinimumLevel(LogLevel.Information);
-            })
-            .UseDashboard(); // TODO: Add Linux/Windows metrics
-    })
-    .UseConsoleLifetime();
+// TODO: Add Application Insights (ASP + Orleans)
+
+if (builder.Environment.IsDevelopment())
+{
+    builder.Host
+        .UseOrleans(siloBuilder =>
+        {
+            siloBuilder
+                .AddAdoNetGrainStorage("RobotStore", options =>
+                {
+                    // Use appsettings.Development.json
+                    options.ConnectionString = "Server=localhost;Database=LearningOrleans;User ID=NurRafi;Password=NurRafi;Trusted_Connection=False;Encrypt=False;MultipleActiveResultSets=True;";
+                })
+                .UseLocalhostClustering()
+                .ConfigureLogging(logging =>
+                {
+                    logging.AddConsole();
+                    logging.SetMinimumLevel(LogLevel.Information);
+                })
+                .UseDashboard(); // TODO: Add Linux/Windows metrics and custom config
+        })
+        .UseConsoleLifetime();
+}
+
+// TODO: Add prod environment
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

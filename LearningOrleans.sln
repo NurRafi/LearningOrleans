@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grains", "Grains\Grains.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{FC80EC94-655F-4606-85EC-C82D326FAC25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{D01B9BF4-1897-4129-8CE5-9C20E6CCA1A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{FC80EC94-655F-4606-85EC-C82D326FAC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC80EC94-655F-4606-85EC-C82D326FAC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC80EC94-655F-4606-85EC-C82D326FAC25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D01B9BF4-1897-4129-8CE5-9C20E6CCA1A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D01B9BF4-1897-4129-8CE5-9C20E6CCA1A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D01B9BF4-1897-4129-8CE5-9C20E6CCA1A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D01B9BF4-1897-4129-8CE5-9C20E6CCA1A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
